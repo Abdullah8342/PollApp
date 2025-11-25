@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+</head>
+<body>
+    {% if latest_question_list %}
+    <ul>
+        {% for q in latest_question_list %}
+        <li><a href="{% url 'detail' q.id %}">{{q.question_text}}</a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <ul>
+        <li>No Question Found</li>
+    </ul>
+    {% endif %}
+</body>
+</html>

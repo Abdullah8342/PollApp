@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+</head>
+
+<body>
+    <h2>{{question.question_text}}</h2>
+    <ul>
+        {% if question.choice_set.all %}
+        {% for choice in question.choice_set.all %}
+        <li>{{choice}}</li>
+        {% endfor %}
+        {% else %}
+        <li>No Choice Found</li>
+        {% endif %}
+    </ul>
+    <span>{{question.pub_date}}</span>
+</body>
+
+</html>
